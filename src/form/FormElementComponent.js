@@ -1,18 +1,30 @@
-import React, { Component} from 'react'
+import React from 'react'
 import {ELEMENT_TYPE} from '../constants/contants'
 import {TextElement, TextAreaElement, PrintElement, PasswordElement, CheckboxElement, RadioElement, SimpleSelectElement} from './FormElement'
 
-const Mixing = InnerComponent => class extends Component {
+const MixingDictionary = {
+  [ELEMENT_TYPE.PRINT] :  PrintElement,
+  [ELEMENT_TYPE.TEXT] : TextElement,
+  [ELEMENT_TYPE.PASSWORD] : PasswordElement,
+  [ELEMENT_TYPE.CHECKBOX] :  CheckboxElement,
+  [ELEMENT_TYPE.RADIO]:  RadioElement,
+  [ELEMENT_TYPE.TEXTAREA] :  TextAreaElement,
+  [ELEMENT_TYPE.SIMPLE_SELECT] :  SimpleSelectElement
+};
 
-  handleChange = (event) => {
-    const {element, setValue} = this.props;
-    const value = this.getCurrentValue(event);
+const FormElementComponent = (props) => {
+  const {element} = props;
+  const MyReactElement = MixingDictionary[element.type];
+
+  const handleChange = (event) => {
+    const {element, setValue} = props;
+    const value = getCurrentValue(event);
     setValue(element.elementId, value);
   }
 
-  getCurrentValue = (event) =>{
+  const getCurrentValue = (event) =>{
 
-    const {element} = this.props;
+    const {element} = props;
 
     switch (element.type) {
       case 'radio':
@@ -24,29 +36,8 @@ const Mixing = InnerComponent => class extends Component {
     }
   }
 
-  render() {
-    return (<InnerComponent handleChange={this.handleChange} {...this.props} />);
-  }
 
-};
-
-
-
-const MixingDictionary = {
-  [ELEMENT_TYPE.PRINT] :  Mixing(PrintElement),
-  [ELEMENT_TYPE.TEXT] : Mixing(TextElement),
-  [ELEMENT_TYPE.PASSWORD] : Mixing(PasswordElement),
-  [ELEMENT_TYPE.CHECKBOX] :  Mixing(CheckboxElement),
-  [ELEMENT_TYPE.RADIO]: Mixing(RadioElement),
-  [ELEMENT_TYPE.TEXTAREA] :  Mixing(TextAreaElement),
-  [ELEMENT_TYPE.SIMPLE_SELECT] :  Mixing(SimpleSelectElement)
-};
-
-const FormElementComponent = (props) => {
-  const {element} = props;
-  const MyReactElement = MixingDictionary[element.type];
-
-  return (<MyReactElement {...props}  />)
+  return (<MyReactElement handleChange={handleChange} {...props}  />)
 }
 
 export default FormElementComponent;
