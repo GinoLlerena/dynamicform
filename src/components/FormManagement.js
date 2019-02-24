@@ -1,20 +1,41 @@
 import React, { useReducer} from "react"
 import FormElementComponent from '../form/FormElementComponent'
-import keyBy from 'lodash/keyBy'
 import orderBy from 'lodash/orderBy'
 import set from 'lodash/set'
+import get from 'lodash/get'
 import map from 'lodash/map'
-import values from 'lodash/values'
+import some from 'lodash/some'
+import isArray from 'lodash/isArray'
+import isFunction from 'lodash/isFunction'
+import reduce from 'lodash/reduce'
 import form from '../templates/data'
 
-function getElements(formElements){
-  return  keyBy(orderBy(formElements, 'displayOrder','asc'),'elementId');
+function getElements(formElements, valueMap){
+
+  const myFormElements = reduce(formElements, (result, element) => {
+    let hidden = false;
+    if (typeof element.isHidden === "boolean"){
+      hidden = element.isHidden;
+    } else if( isArray(element.isHidden)){
+      hidden = !some(element.isHidden, item => !!(get(valueMap, item, false)))
+    } else if(isFunction(element.isHidden)){
+      hidden = element.isHidden(formElements, valueMap);
+    } else{
+      hidden = false;
+    }
+    if(hidden === false){
+      result.push(element)
+    }
+    return result;
+  }, [])
+
+  return  orderBy(myFormElements, 'displayOrder','asc');
 }
 
 
 function ListElements(props){
 
-  return map( values(getElements(form.formElements)), (element) => {
+  return map(getElements(form.formElements, props.valueMap), (element) => {
     return (
       <FormElementComponent key={element.elementId}
                             element={element}

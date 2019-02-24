@@ -1,24 +1,23 @@
 module.exports = {
-    "formId": "14779320789550015k4v",
-    "name": "My Custom Dynamic Form",
-    "formElements": [
-      {
-        "displayName": "My Dynamic Form",
-        "displayOrder": 0,
-        "required": false,
-        "elementId": "printElement",
-        "type": "print",
-        "readOnly": false,
-        "parentInfo": []
-      },
-      {
+  "formId": "14779320789550015k4v",
+  "name": "My Custom Dynamic Form",
+  "formElements": [
+    {
+      "displayName": "My Dynamic Form",
+      "displayOrder": 0,
+      "required": false,
+      "elementId": "printElement",
+      "type": "print",
+      "readOnly": false,
+      "isHidden": () => (false)
+    }, {
       "displayName": "First Name",
       "displayOrder": 1,
       "required": false,
       "elementId": "mainPerson.firstname",
       "type": "text",
       "readOnly": false,
-      "parentInfo": []
+      "isHidden": () => (false)
     }, {
       "displayName": "Last Name",
       "displayOrder": 2,
@@ -26,7 +25,7 @@ module.exports = {
       "elementId": "mainPerson.lastname",
       "type": "text",
       "readOnly": false,
-      "parentInfo": []
+      "isHidden": ()=>(false)
     }, {
       "displayName": "Company",
       "displayOrder": 3,
@@ -34,7 +33,7 @@ module.exports = {
       "elementId": "mainPerson.standardCompanyname",
       "type": "text",
       "readOnly": false,
-      "parentInfo": []
+      "isHidden": ()=>(false)
     }, {
       "displayName": "Job Title",
       "displayOrder": 4,
@@ -42,33 +41,33 @@ module.exports = {
       "elementId": "mainPerson.jobtitle",
       "type": "text",
       "readOnly": true,
-      "parentInfo": []
+      "isHidden": ()=>(false)
     }, {
-        "displayName": "Sex",
-        "displayOrder": 5,
-        "required": false,
-        "elementId": "mainPerson.sex",
-        "formElementValues": [{
-          "displayName": "Male",
-          "displayOrder": 1,
-          "elementvalueId": "male"
-        }, {
-          "displayName": "Female",
-          "displayOrder": 2,
-          "elementvalueId": "female"
-        }],
-        "type": "simple-select",
-        "readOnly": true,
-        "parentInfo": []
-      },
-      {
+      "displayName": "Sex",
+      "displayOrder": 5,
+      "required": false,
+      "elementId": "mainPerson.sex",
+      "formElementValues": [{
+        "displayName": "Male",
+        "displayOrder": 1,
+        "elementvalueId": "male"
+      }, {
+        "displayName": "Female",
+        "displayOrder": 2,
+        "elementvalueId": "female"
+      }],
+      "type": "simple-select",
+      "readOnly": true,
+      "isHidden": ()=>(false)
+    },
+    {
       "displayName": "Sales Rep First Name",
       "displayOrder": 6,
       "required": false,
       "elementId": "salesPersonFirstName",
       "type": "text",
       "readOnly": true,
-      "parentInfo": []
+      "isHidden": ()=>(false)
     }, {
       "displayName": "Sales Rep Last Name",
       "displayOrder": 7,
@@ -76,7 +75,7 @@ module.exports = {
       "elementId": "salesPersonLastName",
       "type": "text",
       "readOnly": true,
-      "parentInfo": []
+      "isHidden": ()=>(false)
     }, {
       "displayName": "Sales Rep Email",
       "displayOrder": 8,
@@ -84,7 +83,7 @@ module.exports = {
       "elementId": "salesPersonEmail",
       "type": "text",
       "readOnly": true,
-      "parentInfo": [],
+      "isHidden": ()=>(false)
     }, {
       "displayName": "Status",
       "displayOrder": 9,
@@ -104,8 +103,8 @@ module.exports = {
         "elementvalueId": "pending"
       }],
       "type": "radio",
-      "readOnly": true,
-      "parentInfo": [],
+      "readOnly": false,
+      "isHidden": ()=>(false)
     }, {
       "displayName": "Registered?",
       "displayOrder": 10,
@@ -113,14 +112,14 @@ module.exports = {
       "elementId": "registered",
       "type": "checkbox",
       "readOnly": true,
-      "parentInfo": []
+      "isHidden": false
     }, {
       "displayName": "Comments",
       "displayOrder": 11,
       "required": false,
       "elementId": "comments",
       "type": "textarea",
-      "readOnly": true,
-      "parentInfo": []
+      "readOnly": false,
+      "isHidden": ['registered']
     }]
 }
