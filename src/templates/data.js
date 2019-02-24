@@ -5,7 +5,7 @@ module.exports = {
       "displayName": "First Name",
       "displayOrder": 1,
       "required": false,
-      "elementId": "formAttendee.firstname",
+      "elementId": "mainPerson.firstname",
       "type": "text",
       "readOnly": false,
       "parentInfo": []
@@ -13,7 +13,7 @@ module.exports = {
       "displayName": "Last Name",
       "displayOrder": 2,
       "required": false,
-      "elementId": "formAttendee.lastname",
+      "elementId": "mainPerson.lastname",
       "type": "text",
       "readOnly": false,
       "parentInfo": []
@@ -21,7 +21,7 @@ module.exports = {
       "displayName": "Company",
       "displayOrder": 3,
       "required": false,
-      "elementId": "formAttendee.standardCompanyname",
+      "elementId": "mainPerson.standardCompanyname",
       "type": "text",
       "readOnly": false,
       "parentInfo": []
@@ -29,7 +29,7 @@ module.exports = {
       "displayName": "Job Title",
       "displayOrder": 4,
       "required": false,
-      "elementId": "formAttendee.jobtitle",
+      "elementId": "mainPerson.jobtitle",
       "type": "text",
       "readOnly": true,
       "parentInfo": []
@@ -37,14 +37,7 @@ module.exports = {
       "displayName": "Sales Rep First Name",
       "displayOrder": 5,
       "required": false,
-      "elementId": "1465251093836001u4jO",
-      "formElementValues": [{
-        "displayName": "Leaders Circle Sales Rep Name",
-        "displayOrder": 0,
-        "name": "Leaders Circle Sales Rep Name",
-        "elementvalueId": "1465251093847002u4LD"
-      }],
-      "name": "Nominator Sales Rep First Name",
+      "elementId": "salesPersonFirstName",
       "type": "text",
       "readOnly": true,
       "parentInfo": []
@@ -52,14 +45,7 @@ module.exports = {
       "displayName": "Sales Rep Last Name",
       "displayOrder": 6,
       "required": false,
-      "elementId": "1465506732471001ox3m",
-      "formElementValues": [{
-        "displayName": "Nominator Sales Rep Last Name",
-        "displayOrder": 0,
-        "name": "Nominator Sales Rep Last Name",
-        "elementvalueId": "1465506732474002otsj"
-      }],
-      "name": "Nominator Sales Rep Last Name",
+      "elementId": "salesPersonLastName",
       "type": "text",
       "readOnly": true,
       "parentInfo": []
@@ -67,14 +53,7 @@ module.exports = {
       "displayName": "Sales Rep Email",
       "displayOrder": 7,
       "required": false,
-      "elementId": "1465251163426001uS7F",
-      "formElementValues": [{
-        "displayName": "Leaders Circle Sales Rep Email",
-        "displayOrder": 0,
-        "name": "Leaders Circle Sales Rep Email",
-        "elementvalueId": "1465251163432002ugJ4"
-      }],
-      "name": "Nominator Sales Rep Email",
+      "elementId": "salesPersonEmail",
       "type": "text",
       "readOnly": true,
       "parentInfo": [],
@@ -82,40 +61,35 @@ module.exports = {
       "displayName": "Status",
       "displayOrder": 8,
       "required": false,
-      "elementId": "1475173168578001MjSe",
+      "elementId": "status",
       "formElementValues": [{
         "displayName": "Approved",
         "displayOrder": 1,
-        "name": "Approved",
-        "elementvalueId": "1475173168584001Mzwp"
+        "elementvalueId": "approved"
       }, {
         "displayName": "Declined",
         "displayOrder": 2,
-        "name": "Declined",
-        "elementvalueId": "1475173168584003MRIx"
+        "elementvalueId": "declined"
       }, {
         "displayName": "Pending",
         "displayOrder": 3,
-        "name": "Pending",
-        "elementvalueId": "1475173168584002MVAz"
+        "elementvalueId": "pending"
       }],
-      "name": "OIC Approval Status",
       "type": "radio",
       "readOnly": true,
       "parentInfo": [],
     }, {
-      "displayName": "Reg Status",
+      "displayName": "Registered?",
       "displayOrder": 9,
       "required": false,
-      "elementId": "1478801421380001GUb5",
+      "elementId": "registered",
       "formElementValues": [{
         "displayName": "Registered",
         "displayOrder": 1,
         "name": "Registered",
-        "elementvalueId": "1478801421386001GiS2"
+        "elementvalueId": "yes"
       }],
-      "name": "Nomination - Reg Status",
-      "type": "radio",
+      "type": "checkbox",
       "readOnly": true,
       "parentInfo": []
     }]

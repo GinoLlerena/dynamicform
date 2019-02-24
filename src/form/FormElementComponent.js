@@ -45,7 +45,7 @@ const FormElementComponent = (props) => {
   const {element} = props;
   const MyReactElement = MixingDictionary[element.type];
 
-  return (<MyReactElement key={element.elementId} {...props}  />)
+  return (<MyReactElement {...props}  />)
 }
 
 export default FormElementComponent;
