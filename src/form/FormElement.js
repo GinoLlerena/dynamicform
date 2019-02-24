@@ -28,7 +28,7 @@ export const CheckboxElement = (props) => {
   const {valueMap, element, handleChange} = props;
 
     return (
-      <div className="form-check small">
+      <div className="form-check">
         <label className="form-check-label">
           <input type="checkbox" checked={get(valueMap, element.elementId)} onChange={handleChange} className="form-check-input"/> <span>{element.displayName}</span>
         </label>
@@ -44,6 +44,8 @@ export const PrintElement = (props) => {
     </div>
   )
 }
+
+
 
 export const TextElement = (props) => {
 

@@ -3,7 +3,6 @@ import FormElementComponent from '../form/FormElementComponent'
 import keyBy from 'lodash/keyBy'
 import orderBy from 'lodash/orderBy'
 import set from 'lodash/set'
-import get from 'lodash/get'
 import map from 'lodash/map'
 import values from 'lodash/values'
 import form from '../templates/data'
@@ -17,7 +16,7 @@ function ListElements(props){
 
   return map( values(getElements(form.formElements)), (element) => {
     return (
-      <FormElementComponent key={element.elementId + '-' + get(props.valueMap, element.elementId, '')}
+      <FormElementComponent key={element.elementId}
                             element={element}
                             setValue={props.setValue}
                             valueMap={props.valueMap}

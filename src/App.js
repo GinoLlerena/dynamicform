@@ -4,7 +4,7 @@ import FormManagement from './components/FormManagement'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='container'>
         <FormManagement  />
       </div>
     );

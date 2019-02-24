@@ -1,7 +1,17 @@
 module.exports = {
     "formId": "14779320789550015k4v",
     "name": "My Custom Dynamic Form",
-    "formElements": [{
+    "formElements": [
+      {
+        "displayName": "My Dynamic Form",
+        "displayOrder": 0,
+        "required": false,
+        "elementId": "printElement",
+        "type": "print",
+        "readOnly": false,
+        "parentInfo": []
+      },
+      {
       "displayName": "First Name",
       "displayOrder": 1,
       "required": false,
@@ -83,13 +93,15 @@ module.exports = {
       "displayOrder": 9,
       "required": false,
       "elementId": "registered",
-      "formElementValues": [{
-        "displayName": "Registered",
-        "displayOrder": 1,
-        "name": "Registered",
-        "elementvalueId": "yes"
-      }],
       "type": "checkbox",
+      "readOnly": true,
+      "parentInfo": []
+    }, {
+      "displayName": "Comments",
+      "displayOrder": 9,
+      "required": false,
+      "elementId": "comments",
+      "type": "textarea",
       "readOnly": true,
       "parentInfo": []
     }]
