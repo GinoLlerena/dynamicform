@@ -14,6 +14,31 @@ export const RadioOption = ({item, currentValue, handleChange}) => {
   )
 }
 
+function getOptionList(formElementValues){
+  const list = formElementValues && formElementValues.length ? map(formElementValues, (item) => {
+    return(
+      <option key={item.elementvalueId}>{item.displayName}</option>
+    )
+  }) : null;
+
+  return list;
+}
+
+export const SimpleSelectElement = (props) => {
+
+  const {valueMap, element, handleChange} = props;
+  const {formElementValues} = element;
+
+  return(
+    <div className="form-group">
+      <label htmlFor={element.elementId}>{element.displayName}</label>
+      <select className="form-control" id={element.elementId} value={get(valueMap, element.elementId)} onChange={handleChange}>
+        {getOptionList(formElementValues)}
+      </select>
+    </div>
+  )
+}
+
 export const PasswordElement = (props) => {
   const {valueMap, element, handleChange} = props;
   return(

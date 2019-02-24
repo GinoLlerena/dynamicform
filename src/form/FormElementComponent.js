@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
 import {ELEMENT_TYPE} from '../constants/contants'
-import {TextElement, TextAreaElement, PrintElement, PasswordElement, CheckboxElement, RadioElement} from './FormElement'
+import {TextElement, TextAreaElement, PrintElement, PasswordElement, CheckboxElement, RadioElement, SimpleSelectElement} from './FormElement'
 
 const Mixing = InnerComponent => class extends Component {
 
@@ -38,7 +38,8 @@ const MixingDictionary = {
   [ELEMENT_TYPE.PASSWORD] : Mixing(PasswordElement),
   [ELEMENT_TYPE.CHECKBOX] :  Mixing(CheckboxElement),
   [ELEMENT_TYPE.RADIO]: Mixing(RadioElement),
-  [ELEMENT_TYPE.TEXTAREA] :  Mixing(TextAreaElement)
+  [ELEMENT_TYPE.TEXTAREA] :  Mixing(TextAreaElement),
+  [ELEMENT_TYPE.SIMPLE_SELECT] :  Mixing(SimpleSelectElement)
 };
 
 const FormElementComponent = (props) => {

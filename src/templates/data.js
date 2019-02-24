@@ -44,8 +44,26 @@ module.exports = {
       "readOnly": true,
       "parentInfo": []
     }, {
+        "displayName": "Sex",
+        "displayOrder": 5,
+        "required": false,
+        "elementId": "mainPerson.sex",
+        "formElementValues": [{
+          "displayName": "Male",
+          "displayOrder": 1,
+          "elementvalueId": "male"
+        }, {
+          "displayName": "Female",
+          "displayOrder": 2,
+          "elementvalueId": "female"
+        }],
+        "type": "simple-select",
+        "readOnly": true,
+        "parentInfo": []
+      },
+      {
       "displayName": "Sales Rep First Name",
-      "displayOrder": 5,
+      "displayOrder": 6,
       "required": false,
       "elementId": "salesPersonFirstName",
       "type": "text",
@@ -53,7 +71,7 @@ module.exports = {
       "parentInfo": []
     }, {
       "displayName": "Sales Rep Last Name",
-      "displayOrder": 6,
+      "displayOrder": 7,
       "required": false,
       "elementId": "salesPersonLastName",
       "type": "text",
@@ -61,7 +79,7 @@ module.exports = {
       "parentInfo": []
     }, {
       "displayName": "Sales Rep Email",
-      "displayOrder": 7,
+      "displayOrder": 8,
       "required": false,
       "elementId": "salesPersonEmail",
       "type": "text",
@@ -69,7 +87,7 @@ module.exports = {
       "parentInfo": [],
     }, {
       "displayName": "Status",
-      "displayOrder": 8,
+      "displayOrder": 9,
       "required": false,
       "elementId": "status",
       "formElementValues": [{
@@ -90,7 +108,7 @@ module.exports = {
       "parentInfo": [],
     }, {
       "displayName": "Registered?",
-      "displayOrder": 9,
+      "displayOrder": 10,
       "required": false,
       "elementId": "registered",
       "type": "checkbox",
@@ -98,7 +116,7 @@ module.exports = {
       "parentInfo": []
     }, {
       "displayName": "Comments",
-      "displayOrder": 9,
+      "displayOrder": 11,
       "required": false,
       "elementId": "comments",
       "type": "textarea",

@@ -4,5 +4,6 @@ export const ELEMENT_TYPE = {
   PASSWORD: 'password',
   CHECKBOX: 'checkbox',
   RADIO: 'radio',
-  TEXTAREA: 'textarea'
+  TEXTAREA: 'textarea',
+  SIMPLE_SELECT: 'simple-select'
 }
