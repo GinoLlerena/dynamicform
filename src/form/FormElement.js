@@ -5,7 +5,7 @@ import get from 'lodash/get'
 export const RadioOption = ({item, currentValue, handleChange}) => {
   return (
     <div className="form-check">
-      <input className="form-check-input" type="radio" name="gridRadios" id={item.elementvalueId}
+      <input className="form-check-input" type="radio" id={item.elementvalueId}
              value={item.elementvalueId} checked={item.elementvalueId === currentValue} onChange={handleChange}/>
       <label className="form-check-label" htmlFor={item.elementvalueId}>
         {item.displayName}
@@ -17,7 +17,7 @@ export const RadioOption = ({item, currentValue, handleChange}) => {
 function getOptionList(formElementValues){
   const list = formElementValues && formElementValues.length ? map(formElementValues, (item) => {
     return(
-      <option key={item.elementvalueId}>{item.displayName}</option>
+      <option key={item.elementvalueId} value={item.elementvalueId}>{item.displayName}</option>
     )
   }) : null;
 
@@ -43,8 +43,8 @@ export const PasswordElement = (props) => {
   const {valueMap, element, handleChange} = props;
   return(
     <div className="form-group">
-      <label htmlFor="exampleInputPassword1">{element.displayName}</label>
-      <input type="password" className="form-control" id="exampleInputPassword1" value={get(valueMap, element.elementId)} placeholder="Password" onChange={handleChange} />
+      <label htmlFor={element.elementId}>{element.displayName}</label>
+      <input type="password" className="form-control" id={element.elementId} value={get(valueMap, element.elementId)} placeholder="Password" onChange={handleChange} />
     </div>
   )
 }
@@ -78,8 +78,8 @@ export const TextElement = (props) => {
 
   return(
     <div className="form-group">
-      <label htmlFor="uname1">{element.displayName}</label>
-      <input type="text" className="form-control" autoComplete="off" name="uname1" id="uname1" onChange={handleChange} value={get(valueMap, element.elementId)} required=""/>
+      <label htmlFor={element.elementId}>{element.displayName}</label>
+      <input type="text" className="form-control" autoComplete="off" name={element.elementId} id={element.elementId} onChange={handleChange} value={get(valueMap, element.elementId)} required=""/>
         <div className="invalid-feedback">Please enter your username or email</div>
     </div>
   )
@@ -91,8 +91,8 @@ export const TextAreaElement = (props) => {
 
   return(
     <div className="form-group">
-      <label htmlFor="exampleFormControlTextarea1">{element.displayName}</label>
-      <textarea className="form-control" id="exampleFormControlTextarea1" value={get(valueMap, element.elementId)} onChange={handleChange} rows="3"></textarea>
+      <label htmlFor={element.elementId}>{element.displayName}</label>
+      <textarea className="form-control" id={element.elementId} value={get(valueMap, element.elementId)} onChange={handleChange} rows="3"></textarea>
     </div>
   )
 }
