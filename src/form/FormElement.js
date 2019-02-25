@@ -17,7 +17,7 @@ export const RadioOption = ({item, currentValue, handleChange}) => {
 function getOptionList(formElementValues){
   const list = formElementValues && formElementValues.length ? map(formElementValues, (item) => {
     return(
-      <option key={item.elementvalueId}>{item.displayName}</option>
+      <option key={item.elementvalueId} value={item.elementvalueId}>{item.displayName}</option>
     )
   }) : null;
 

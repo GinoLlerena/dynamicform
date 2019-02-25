@@ -43,10 +43,10 @@ module.exports = {
       "readOnly": true,
       "isHidden": ()=>(false)
     }, {
-      "displayName": "Sex",
+      "displayName": "Gender",
       "displayOrder": 5,
       "required": false,
-      "elementId": "mainPerson.sex",
+      "elementId": "mainPerson.gender",
       "formElementValues": [{
         "displayName": "Male",
         "displayOrder": 1,
