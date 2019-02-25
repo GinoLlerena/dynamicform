@@ -2,7 +2,7 @@ import React from 'react'
 import {ELEMENT_TYPE} from '../constants/contants'
 import {TextElement, TextAreaElement, PrintElement, PasswordElement, CheckboxElement, RadioElement, SimpleSelectElement} from './FormElement'
 
-const MixingDictionary = {
+const ElementDictionary = {
   [ELEMENT_TYPE.PRINT] :  PrintElement,
   [ELEMENT_TYPE.TEXT] : TextElement,
   [ELEMENT_TYPE.PASSWORD] : PasswordElement,
@@ -14,7 +14,7 @@ const MixingDictionary = {
 
 const FormElementComponent = (props) => {
   const {element} = props;
-  const MyReactElement = MixingDictionary[element.type];
+  const MyReactElement = ElementDictionary[element.type];
 
   const handleChange = (event) => {
     const {element, setValue} = props;
