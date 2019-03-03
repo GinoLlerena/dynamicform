@@ -40,7 +40,7 @@ module.exports = {
       "required": false,
       "elementId": "mainPerson.jobtitle",
       "type": "text",
-      "readOnly": true,
+      "readOnly": false,
       "isHidden": ()=>(false)
     }, {
       "displayName": "Gender",
@@ -57,7 +57,7 @@ module.exports = {
         "elementvalueId": "female"
       }],
       "type": "simple-select",
-      "readOnly": true,
+      "readOnly": false,
       "isHidden": ()=>(false)
     },
     {
@@ -66,7 +66,7 @@ module.exports = {
       "required": false,
       "elementId": "salesPersonFirstName",
       "type": "text",
-      "readOnly": true,
+      "readOnly": false,
       "isHidden": ()=>(false)
     }, {
       "displayName": "Sales Rep Last Name",
@@ -74,7 +74,7 @@ module.exports = {
       "required": false,
       "elementId": "salesPersonLastName",
       "type": "text",
-      "readOnly": true,
+      "readOnly": false,
       "isHidden": ()=>(false)
     }, {
       "displayName": "Sales Rep Email",
@@ -82,7 +82,7 @@ module.exports = {
       "required": false,
       "elementId": "salesPersonEmail",
       "type": "text",
-      "readOnly": true,
+      "readOnly": false,
       "isHidden": ()=>(false)
     }, {
       "displayName": "Status",
@@ -111,7 +111,7 @@ module.exports = {
       "required": false,
       "elementId": "registered",
       "type": "checkbox",
-      "readOnly": true,
+      "readOnly": false,
       "isHidden": false
     }, {
       "displayName": "Comments",
