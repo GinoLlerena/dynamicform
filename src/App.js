@@ -24,7 +24,7 @@ function App() {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/formManagement/">Form Sample</Link>
+              <Link to="/formManagement/">Sample Form</Link>
             </li>
             <li>
               <Link to="/formBuilder/">Form Builder</Link>
