@@ -65,15 +65,17 @@ export default function FormManagement(props){
   const [state, dispatch] = useReducer(reducer, init());
 
   return(
-    <form>
-      <div><pre>{JSON.stringify(state.valueMap, null, 2) }</pre></div>
-      <ListElements valueMap={state.valueMap} setValue={(id, value) => dispatch({type: 'onChange', id, value})} />
-      <div className="form-group" style={{paddingTop:'2em'}}>
-        <div className="text-center">
-          <button type="button" className="btn btn-success" onClick={()=> console.log('valueMap', state.valueMap)}>Send</button>
+    <div className="container">
+      <form>
+        <div><pre>{JSON.stringify(state.valueMap, null, 2) }</pre></div>
+        <ListElements valueMap={state.valueMap} setValue={(id, value) => dispatch({type: 'onChange', id, value})} />
+        <div className="form-group" style={{paddingTop:'2em'}}>
+          <div className="text-center">
+            <button type="button" className="btn btn-success" onClick={()=> console.log('valueMap', state.valueMap)}>Send</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   )
 }
 
