@@ -116,3 +116,11 @@ export const RadioElement = (props) => {
     </fieldset>
   )
 }
+
+export function EndPoint(props){
+
+
+  return(
+    <SimpleSelectElement />
+  )
+}

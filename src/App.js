@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FormManagement from './components/FormManagement'
 import FormBuilder from './components/FormBuilder'
+import Login from './components/Login'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 function Index() {
@@ -20,6 +21,9 @@ function App() {
             <li>
               <Link to="/">Home</Link>
             </li>
+           {/* <li>
+              <Link to="/login">Login</Link>
+            </li>*/}
             <li>
               <Link to="/about">About</Link>
             </li>
@@ -33,6 +37,7 @@ function App() {
         </nav>
 
         <Route path="/" exact component={Index} />
+       {/* <Route path="/login" exact component={Login} />*/}
         <Route path="/about/" component={About} />
         <Route path="/formManagement/" component={FormManagement} />
         <Route path="/formBuilder/" component={FormBuilder} />

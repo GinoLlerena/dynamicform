@@ -5,7 +5,8 @@ export const ELEMENT_TYPE = {
   CHECKBOX: 'checkbox',
   RADIO: 'radio',
   TEXTAREA: 'textarea',
-  SIMPLE_SELECT: 'simple-select'
+  SIMPLE_SELECT: 'simple-select',
+  END_POINT: 'end-point'
 }
 
 export const ACTIONS = {

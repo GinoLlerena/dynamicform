@@ -1,6 +1,6 @@
 import React from 'react'
 import {ELEMENT_TYPE} from '../constants/contants'
-import {TextElement, TextAreaElement, PrintElement, PasswordElement, CheckboxElement, RadioElement, SimpleSelectElement} from './FormElement'
+import {TextElement, TextAreaElement, PrintElement, PasswordElement, CheckboxElement, RadioElement, SimpleSelectElement, EndPoint} from './FormElement'
 
 const ElementDictionary = {
   [ELEMENT_TYPE.PRINT] :  PrintElement,
@@ -9,7 +9,8 @@ const ElementDictionary = {
   [ELEMENT_TYPE.CHECKBOX] :  CheckboxElement,
   [ELEMENT_TYPE.RADIO]:  RadioElement,
   [ELEMENT_TYPE.TEXTAREA] :  TextAreaElement,
-  [ELEMENT_TYPE.SIMPLE_SELECT] :  SimpleSelectElement
+  [ELEMENT_TYPE.SIMPLE_SELECT] :  SimpleSelectElement,
+  [ELEMENT_TYPE.END_POINT] :  EndPoint
 };
 
 const FormElementComponent = (props) => {

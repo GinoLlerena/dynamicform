@@ -10,6 +10,10 @@ import isFunction from 'lodash/isFunction'
 import reduce from 'lodash/reduce'
 import form from '../templates/data'
 
+const FETCH_ENDPOINT_REQUEST = 'FETCH_ENDPOINT_REQUEST'
+const FETCH_ENDPOINT_SUCCESS = 'FETCH_ENDPOINT_SUCCESS'
+const FETCH_ENDPOINT_FAILURE = 'FETCH_ENDPOINT_FAILURE'
+
 function getElements(formElements, valueMap){
 
   const myFormElements = reduce(formElements, (result, element) => {
@@ -46,6 +50,23 @@ function ListElements(props){
 }
 
 
+/*const useApiRequest = (endpoint, { verb = 'get', params = {} } = {}) => {
+  const [state, dispatch] = useReducer(reducer);
+
+  const makeRequest = async () => {
+    dispatch(fetching());
+    try {
+      const response = await axios[verb](endpoint, params);
+      dispatch(success(response));
+    } catch (e) {
+      dispatch(error(e));
+    }
+  };
+
+  return [state, makeRequest];
+};*/
+
+
 function init() {
   return {valueMap: {}};
 }
@@ -54,6 +75,8 @@ function reducer(state, action) {
   switch (action.type) {
     case 'onChange':
       return {valueMap: set(state.valueMap, action.id, action.value)};
+    case `${action.id}_${FETCH_ENDPOINT_SUCCESS}`:
+      return {[action.id] : action.result}
     default:
       throw new Error();
   }
