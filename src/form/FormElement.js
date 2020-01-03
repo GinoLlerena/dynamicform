@@ -44,7 +44,7 @@ export const PasswordElement = (props) => {
   return(
     <div className="form-group">
       <label htmlFor={element.elementId}>{element.displayName}</label>
-      <input type="password" className="form-control" id={element.elementId} value={get(valueMap, element.elementId)} placeholder="Password" onChange={handleChange} disabled={element.readOnly} />
+      <input type="password" className="form-control" id={element.elementId} defaultValue={get(valueMap, element.elementId)} placeholder="Password" onChange={handleChange} disabled={element.readOnly} />
     </div>
   )
 }
@@ -55,7 +55,7 @@ export const CheckboxElement = (props) => {
     return (
       <div className="form-check">
         <label className="form-check-label">
-          <input type="checkbox" checked={get(valueMap, element.elementId)} onChange={handleChange} disabled={element.readOnly} className="form-check-input"/> <span>{element.displayName}</span>
+          <input type="checkbox" defaultChecked={get(valueMap, element.elementId)} onChange={handleChange} disabled={element.readOnly} className="form-check-input"/> <span>{element.displayName}</span>
         </label>
       </div>
   )
@@ -79,7 +79,7 @@ export const TextElement = (props) => {
   return(
     <div className="form-group">
       <label htmlFor={element.elementId}>{element.displayName}</label>
-      <input type="text" className="form-control" autoComplete="off" name={element.elementId} id={element.elementId} onChange={handleChange} value={get(valueMap, element.elementId)} disabled={element.readOnly}  required=""/>
+      <input type="text" className="form-control" autoComplete="off" name={element.elementId} id={element.elementId} onChange={handleChange} defaultValue={get(valueMap, element.elementId)} disabled={element.readOnly}  required=""/>
         <div className="invalid-feedback">Please enter your username or email</div>
     </div>
   )
@@ -92,7 +92,7 @@ export const TextAreaElement = (props) => {
   return(
     <div className="form-group">
       <label htmlFor={element.elementId}>{element.displayName}</label>
-      <textarea className="form-control" id={element.elementId} value={get(valueMap, element.elementId)} disabled={element.readOnly} onChange={handleChange} rows="3"></textarea>
+      <textarea className="form-control" id={element.elementId} defaultValue={get(valueMap, element.elementId)} disabled={element.readOnly} onChange={handleChange} rows="3"></textarea>
     </div>
   )
 }
