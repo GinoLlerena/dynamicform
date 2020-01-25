@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FormManagement from './components/FormManagement'
 import FormBuilder from './components/FormBuilder'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
