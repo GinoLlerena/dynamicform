@@ -30,8 +30,8 @@ function FormEditElement(props) {
       <div className="card-header">
         Featured
         <div className="float-right">
-          <span className="ml-auto px-2" onClick={()=>onToggle(element.elementId)}><i className="far fa-edit"></i></span>
-          <span className="ml-auto px-2" onClick={onRemElement}><i className="fas fa-trash"></i></span>
+          <span className="ml-auto px-2" onClick={()=>onToggle(element.elementId)}><i className="far fa-edit" style={{cursor:'pointer'}}></i></span>
+          <span className="ml-auto px-2" onClick={onRemElement}><i className="fas fa-trash" style={{cursor:'pointer'}}></i></span>
         </div>
       </div>
       <div className="card-body">
