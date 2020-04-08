@@ -6,8 +6,8 @@ import map from 'lodash/fp/map'
 import entries from 'lodash/fp/entries'
 import flow from 'lodash/fp/flow'
 import cond from 'lodash/fp/cond'
+import stubTrue from 'lodash/fp/stubTrue'
 
-const getFalse = _ => false;
 const getNull = _ => null;
 
 function FormListOptions({formElementValues}) {
@@ -25,7 +25,7 @@ function FormListOptions({formElementValues}) {
 
   return  cond([
     [hasItems, flow(entries, map(currentItem))],
-    [getFalse, getNull]
+    [stubTrue, getNull]
   ])(formElementValues)
 
 }
