@@ -1,3 +1,12 @@
+import isBoolean from 'lodash/fp/isBoolean'
+import some from 'lodash/fp/some'
+import flow from 'lodash/fp/flow'
+import cond from 'lodash/fp/cond'
+import get from 'lodash/fp/get'
+import isArray from 'lodash/fp/isArray'
+import isFunction from 'lodash/fp/isFunction'
+import stubTrue from 'lodash/fp/stubTrue'
+
 const grid = 8;
 
 export function createOption(index, value){
@@ -58,3 +67,15 @@ export const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'lightblue' : 'lightgrey',
   padding: grid
 });
+
+export function shouldBeHidden(formElements, element, valueMap){
+
+  const getItem = item => !!(get(item)(valueMap))
+
+  return cond([
+    [flow(get('isHidden'),isBoolean), ()=> element.isHidden],
+    [flow(get('isHidden'),isArray), ()=> !some(getItem)(element.isHidden)],
+    [flow(get('isHidden'),isFunction), ()=> element.isHidden(formElements, valueMap)],
+    [stubTrue, ()=> false]
+  ])(element)
+}

@@ -7,7 +7,7 @@ import FormBuilderOptions from '../form/FormBuilderOptions'
 import FormElementComponent from "../form/FormElementComponent";
 
 function getOptions(){
-  return map(keys(ELEMENT_TYPE), (key,i)=> <option key={key} value={ELEMENT_TYPE[key]} >{upperFirst(key.toLowerCase())} </option>)
+  return map(keys(ELEMENT_TYPE), (key)=> <option key={key} value={ELEMENT_TYPE[key]} >{upperFirst(key.toLowerCase())} </option>)
 }
 
 function FormEditElement(props) {

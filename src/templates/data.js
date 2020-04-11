@@ -9,7 +9,6 @@ module.exports = {
       "elementId": "printElement",
       "type": "print",
       "readOnly": false,
-      "isHidden": () => (false)
     }, {
       "displayName": "First Name",
       "displayOrder": 1,

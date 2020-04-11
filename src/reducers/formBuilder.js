@@ -31,7 +31,7 @@ const curryGetReorder = curry(getReorder)
 const curryIsEqualElementId = curry(isEqualElementId)
 const curryIsDifferentElementId = curry(isDifferentElementId)
 
-  function formBuilder(state, action) {
+function formBuilder(state, action) {
   switch (action.type) {
     case ACTIONS.DRAG_END:
       if (!action.result.destination) {

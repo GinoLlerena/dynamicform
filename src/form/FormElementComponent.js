@@ -1,6 +1,7 @@
 import React from 'react'
 import {ELEMENT_TYPE} from '../constants/contants'
 import {TextElement, TextAreaElement, PrintElement, PasswordElement, CheckboxElement, RadioElement, SimpleSelectElement} from './FormElement'
+import {shouldBeHidden} from '../utils/FormUtils'
 
 const ElementDictionary = {
   [ELEMENT_TYPE.PRINT] :  PrintElement,
@@ -13,7 +14,7 @@ const ElementDictionary = {
 };
 
 const FormElementComponent = (props) => {
-  const {element} = props;
+  const {element, formElements, valueMap} = props;
   const MyReactElement = ElementDictionary[element.type];
 
   const handleChange = (event) => {
@@ -27,16 +28,20 @@ const FormElementComponent = (props) => {
     const {element} = props;
 
     switch (element.type) {
-      case 'radio':
+      case ELEMENT_TYPE.RADIO:
         return event.target.value;
-      case 'checkbox':
+      case ELEMENT_TYPE.CHECKBOX:
         return event.target.checked;
       default:
         return event.target.value;
     }
   }
 
+  const isHidden = shouldBeHidden(formElements, element, valueMap)
 
+  if(isHidden){
+    return null;
+  }
   return (<MyReactElement handleChange={handleChange} {...props}  />)
 }
 
