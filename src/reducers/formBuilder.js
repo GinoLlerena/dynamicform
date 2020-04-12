@@ -53,7 +53,7 @@ function formBuilder(state, action) {
         return {...state, items}
       }
     case ACTIONS.CHANGE_VALUE:
-      if (!(action.key && action.value && action.elementId)) {
+      if (!(action.key  && action.elementId)) {
         return state;
       }else {
         const {key, value, elementId} = action;
